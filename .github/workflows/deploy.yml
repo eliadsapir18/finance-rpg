@@ -27,9 +27,11 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
 
       - run: npm run build
+        env:
+          VITE_BASE: /finance-rpg/
 
       - uses: actions/configure-pages@v4
 
